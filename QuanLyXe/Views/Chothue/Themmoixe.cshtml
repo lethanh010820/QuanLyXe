@@ -1,0 +1,134 @@
+﻿@model QuanLyXe.Models.SANPHAM
+@{
+    ViewBag.Title = "Thêm mới xe";
+    Layout = "~/Views/Shared/_LayoutChothue.cshtml";
+}
+<style>
+    #maloaiSP, #makv {
+        width: 300px
+    }
+</style>
+<!-- End Navbar -->
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Thêm mới xe</h4>
+                    </div>
+                    <div class="card-body">
+                        @using (Html.BeginForm("Themmoixe", "Chothue", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+                        {
+                            @Html.AntiForgeryToken()
+                        <div class="row">
+                            @Html.ValidationSummary(true)
+                            <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label>Tên xe:</label>
+                                    <input class="form-control" type="text" name="tenSP" placeholder="" maxlength="50" required />
+                                    @Html.ValidationMessageFor(model => model.tenSP)
+                                </div>
+                            </div>
+                            <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label>Giá cho thuê:</label>
+                                    <input class="form-control" type="text" name="giathue" placeholder="" required />
+                                    @Html.ValidationMessageFor(model => model.giathue)
+                                </div>
+                            </div>
+                            <div class="col-md-12 pl-1">
+                                <div class="form-group">
+                                    @Html.Label("Mô tả:", htmlAttributes: new { @class = "control-label col-md-4" })
+                                    <div class="col-md-12">
+                                        <textarea id="mota" name="mota" maxlength="255" required></textarea>
+                                        @Html.ValidationMessageFor(model => model.mota, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <script>
+                                    var editor = CKEDITOR.replace('mota',
+                                        {
+                                            filebrowserImageBrowseUrl: "~/Content/ckfinder/ckfinder.html?type=Images",
+                                            width: '100%',
+                                            height: '450'
+                                        }
+                                    );
+                                </script>
+                            </div>
+                            <div class="col-md-12 pl-1">
+                                <div class="form-group">
+                                    <label>Ảnh bìa:</label>
+                                    <div class="form-control">
+                                        <input type="file" name="fileupload" value="" />
+                                    </div>
+                                    @ViewBag.Thongbao
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Khung xe:</label>
+                                    <input class="form-control" type="text" name="khungxe" placeholder="" maxlength="25" required />
+                                    @Html.ValidationMessageFor(model => model.khungxe)
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Màu sấc:</label>
+                                    <input class="form-control" type="text" name="mausac" placeholder="" maxlength="25" required />
+                                    @Html.ValidationMessageFor(model => model.mausac)
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Phân khối:</label>
+                                    <input class="form-control" type="text" name="phankhoi" placeholder="" maxlength="10" required />
+                                    @Html.ValidationMessageFor(model => model.phankhoi)
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Hãng xe:</label>
+                                    <input class="form-control" type="text" name="hangxe" placeholder="" maxlength="25" required />
+                                    @Html.ValidationMessageFor(model => model.hangxe)
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Biển số:</label>
+                                    <input class="form-control" type="text" name="bienso" placeholder="" maxlength="10" required />
+                                    @Html.ValidationMessageFor(model => model.bienso)
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Địa chỉ:</label>
+                                    <input class="form-control" type="text" name="diachi" placeholder="" maxlength="100" required />
+                                    @Html.ValidationMessageFor(model => model.diachi)
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Loại sản phẩm:</label>
+                                    <label class="form-control">@Html.DropDownList("maloaiSP")</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Khu vực:</label>
+                                    <label class="form-control">@Html.DropDownList("makv")</label>
+                                </div>
+                            </div>
+                            <div class="col-md-12 pl-1">
+                                <div class="form-group">
+                                    <input type="submit" value="Thêm mới" class="btn btn-info btn-fill pull-right" />
+                                </div>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

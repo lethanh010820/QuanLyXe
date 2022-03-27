@@ -1,0 +1,51 @@
+﻿@model QuanLyXe.Models.NGUOIDUNG
+
+@{
+    ViewBag.Title = "Thông tin cá nhân";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<style>
+    label {
+        font-weight: bold;
+    }
+</style>
+<div class="login">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="register-form">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Tên đăng nhập:</label>
+                                @Model.tentaikhoan
+                            </div>
+                            <div class="col-md-6">
+                                <label>Họ và Tên:</label>
+                                @Model.hoten
+                            </div>
+                            <div class="col-md-6">
+                                <label>Số điện thoại:</label>
+                                @Model.sodienthoai
+                            </div>
+                            <div class="col-md-6">
+                                <label>Email:</label>
+                                @Model.email
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <a class="btn btn-success" href="/NguoiDung/SuaThongTin/@Model.maND"> Sửa thông tin</a>
+                                    <a class="btn btn-success" href="~/Moto/index"><i class="fa fa-caret-left" style="font-size:15px;"></i> Quay lại</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6">
+
+            </div>
+        </div>
+    </div>
+</div>

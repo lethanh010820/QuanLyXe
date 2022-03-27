@@ -1,0 +1,63 @@
+﻿@model IEnumerable<QuanLyXe.Models.CTHD>
+@{
+    ViewBag.Title = "Hóa đơn";
+    Layout = "~/Views/Shared/_LayoutChothue.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card strpied-tabled-with-hover">
+                    <div class="card-header ">
+                        <h4 class="card-title">Quản lý hóa đơn</h4>
+                    </div>
+                    <div class="card-body table-full-width table-responsive">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                            <th>Mã hóa đơn</th>
+                            <th>Người thuê</th>
+                            <th>Tên Xe</th>
+                            <th>Ảnh</th>
+                            <th>Số lượng</th>
+                            <th>Ngày thuê</th>
+                            <th>Ngày trả</th>
+                            <th>Thành tiền</th>
+                            <th>Tình trạng</th>
+                            <th>Sửa</th>
+                            <th>Xóa</th>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.maHD</td>
+                                        <td>
+                                            <a href="@Url.Action("Thongtinkhachhang", "Chothue", new { id = @item.HOADON.NGUOIDUNG.maND })">@item.HOADON.NGUOIDUNG.hoten</a>
+
+                                        </td>
+                                        <td>@item.SANPHAM.tenSP</td>
+                                        <td><img style="height: 125px;width: 125px;" src="@Url.Content("~/img/"+ item.SANPHAM.image)" /></td>
+                                        <td>@item.soluong</td>
+                                        <td>@item.HOADON.ngaythue</td>
+                                        <td>@item.HOADON.ngaytra</td>
+                                        <td>@String.Format("{0:0,0}", @item.thanhtien)₫</td>
+                                        <td>
+                                            <p style="color:blue">@item.HOADON.TIENDOTHUEXE.tinhtrangthuexe</p>
+                                        </td>
+                                        <td>
+                                            <a href="/Chothue/SuaHoadon/@item.maHD"><i class="fa fa-edit" style="font-size:30px;"></i></a>
+                                        </td>
+                                        <td>
+                                            <a href="/Chothue/XoaHoaDon/@item.maHD"><i class="fa fa-trash-alt " style="font-size:30px;"></i></a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

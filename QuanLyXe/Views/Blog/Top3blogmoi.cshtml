@@ -1,0 +1,10 @@
+﻿
+@foreach (var item in Model)
+{
+    <a href="@Url.Action("TrangChitietBlog", "Blog", new { id = item.maTD })" class="d-block tm-mb-40">
+        <figure>
+            <img src="@Url.Content("~/img/"+ item.hinhanh)" alt="Image" class="mb-3 img-fluid">
+            <figcaption class="tm-color-primary">@item.tieude</figcaption>
+        </figure>
+    </a>
+}

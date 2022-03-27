@@ -1,0 +1,238 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<!-- Main Slider Start -->
+<div class="header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <nav class="navbar bg-light">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("index", "Moto")"><i class="fa fa-plus-square"></i>Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("index", "ThueXe")"><i class="fa fa-plus-square"></i>Thuê xe</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("index", "BangGia")"><i class="fa fa-plus-square"></i>Bảng giá</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("TrangBlog", "Blog")"><i class="fa fa-plus-square"></i>Blog du lịch</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Giohang", "Giohang")"><i class="fa fa-plus-square"></i>Giỏ hàng</a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-6">
+                <div class="header-slider-item">
+                    <img src="~/img/anhnen1.png" alt="Slider Image" />
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="header-img">
+                    <div class="img-item">
+                        <img src="~/img/anh1.jpg" />
+                        <a class="img-text" href="">
+                            <p>Đi đi đi đến một nơi mà chẳng biết ta là ai, chỉ có thiên nhiên rừng núi và gió trời.</p>
+                        </a>
+                    </div>
+                    <div class="img-item">
+                        <img src="~/img/anh2.jpg" />
+                        <a class="img-text" href="">
+                            <p>Sáng thức dậy ở một nơi thật xa xôi, lòng tràn đầy năng lượng và bắt đầu những hành trình mới.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Main Slider End -->
+<!-- Brand Start -->
+<div class="brand">
+    <div class="container-fluid">
+        <div class="brand-slider">
+            <div class="brand-item"><img src="~/img/logo2.png" alt=""></div>
+            <div class="brand-item"><img src="~/img/logo3.png" alt=""></div>
+            <div class="brand-item"><img src="~/img/logo4.png" alt=""></div>
+            <div class="brand-item"><img src="~/img/logo5.png" alt=""></div>
+            <div class="brand-item"><img src="~/img/logo6.png" alt=""></div>
+            <div class="brand-item"><img src="~/img/logo4.png" alt=""></div>
+        </div>
+    </div>
+</div>
+<!-- Brand End -->
+
+<div class="category">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="category-item ch-400">
+                    <img src="~/img/anh1.jpg" />
+                    <a class="category-name" href="">
+                        <p>Đi phượt đi bạn sẽ thấy Trái đất này rộng lớn bao la đến nhường nào.</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="category-item ch-250">
+                    <img src="~/img/anh2.jpg" />
+                    <a class="category-name" href="">
+                        <p>Không có vùng đất nào là xa lạ. Chỉ có bạn là kẻ phương xa cô độc.</p>
+                    </a>
+                </div>
+                <div class="category-item ch-150">
+                    <img src="~/img/anh3.jpg" />
+                    <a class="category-name" href="">
+                        <p>Thức giấc ở một nơi xa lạ là cảm giác thú vị nhất mà bạn nên trải nghiệm trong đời.</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="category-item ch-150">
+                    <img src="~/img/anh4.jpg" />
+                    <a class="category-name" href="">
+                        <p>Những chuyến phiêu lưu mới sẽ bổ ích cho đôi mắt của chính bạn.</p>
+                    </a>
+                </div>
+                <div class="category-item ch-250">
+                    <img src="~/img/anh5.jpg" />
+                    <a class="category-name" href="">
+                        <p>Thế giới này là một cuốn sách, hãy đi nhiều nơi, đến nhiều vùng đất để đọc hết cuốn sách</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="category-item ch-400">
+                    <img src="~/img/anh6.jpg" />
+                    <a class="category-name" href="">
+                        <p>Một khi nhiễm niềm đam mê xê dịch, không có phương thuốc nào cứu chữa, chỉ có đi đi và không bao giờ dừng lại.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Feature Start-->
+<div class="feature">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-3 col-md-6 feature-col">
+                <div class="feature-content">
+                    <i class="fab fa-cc-mastercard"></i>
+                    <h2>Thanh toán nhanh gọn</h2>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 feature-col">
+                <div class="feature-content">
+                    <i class="fa fa-truck"></i>
+                    <h2>Chất lượng tuyệt đối</h2>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 feature-col">
+                <div class="feature-content">
+                    <i class="fa fa-sync-alt"></i>
+                    <h2>Đổi trả 24h</h2>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 feature-col">
+                <div class="feature-content">
+                    <i class="fa fa-comments"></i>
+                    <h2>Hỗ trợ 24/7</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Feature End-->
+<!-- Call to Action Start -->
+<div class="call-to-action">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1>Liên hệ với chúng tôi để được hỗ trợ</h1>
+            </div>
+            <div class="col-md-6">
+                <a href="tel:0866571001">086-657-1001</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Call to Action End -->
+<!-- Review Start -->
+<div class="review">
+    <div class="container-fluid">
+        <div class="row align-items-center review-slider normal-slider">
+            <div class="col-md-6">
+                <div class="review-slider-item">
+                    <div class="review-img">
+                        <img src="~/img/locadmin.png" alt="Image">
+                    </div>
+                    <div class="review-text">
+                        <h2>Chìu Nguyên Phú Lộc</h2>
+                        <h3>Profession</h3>
+                        <div class="ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p>
+                            Chúng tôi hiểu cảm giác của người đi thuê xe máy phải bỏ ra một số tiền để có được một chiếc xe đủ tốt, không gặp rắc rối khi đi trên đường.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="review-slider-item">
+                    <div class="review-img">
+                        <img src="~/img/thanhadmin.png" alt="Image">
+                    </div>
+                    <div class="review-text">
+                        <h2>Lê Văn Thành</h2>
+                        <h3>Profession</h3>
+                        <div class="ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p>
+                            Toàn bộ xe máy cho thuê của chúng tôi là xe được mua mới 100%, được đăng ký chính chủ.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="review-slider-item">
+                    <div class="review-img">
+                        <img src="~/img/minhadmin.png" alt="Image">
+                    </div>
+                    <div class="review-text">
+                        <h2>Trần Nhật Minh</h2>
+                        <h3>Profession</h3>
+                        <div class="ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <p>
+                            Các xe sau khi kết thúc hợp đồng với khách sẽ được kiểm tra, bảo dưỡng, thay thế các bộ phận hỏng hóc và phải đạt chuẩn an toàn xe trước khi giao cho khách hàng mới.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Review End -->

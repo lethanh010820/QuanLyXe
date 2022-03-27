@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xtra Blog</title>
+    <link rel="stylesheet" href="~/assetBlog/fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+    <link href="~/assetBlog/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/assetBlog/css/templatemo-xtra-blog.css" rel="stylesheet" />
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script type="text/javascript">
+        tinymce.init({
+            selector: '#mytextarea'
+        });
+    </script>
+    <!--
+
+
+    TemplateMo 553 Xtra Blog
+
+    https://templatemo.com/tm-553-xtra-blog
+
+    -->
+
+</head>
+<body>
+    @using QuanLyXe.Models;
+    @{
+        NGUOIDUNG kh = (NGUOIDUNG)Session["Taikhoan"];
+    }
+    <header class="tm-header" id="tm-header">
+        <div class="tm-header-wrapper">
+            <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="tm-site-header">
+                <img src="~/img/logoThuonghieu1.png" alt="Alternate Text" />
+            </div>
+            <nav class="tm-nav" id="tm-nav">
+                <ul>
+                    <li class="tm-nav-item">
+                        <a href="/Moto/index" class="tm-nav-link">
+                            <i class="fas fa-home"></i>
+                            Trang chủ
+                        </a>
+                    </li>
+                    <li class="tm-nav-item">
+                        <a href="/Thuexe/index" class="tm-nav-link">
+                            <i class="fas fa-pen"></i>
+                            Thuê xe
+                        </a>
+                    </li>
+                    <li class="tm-nav-item">
+                        <a href="/BangGia/index" class="tm-nav-link">
+                            <i class="fas fa-users"></i>
+                            Bảng giá
+                        </a>
+                    </li>
+                    <li class="tm-nav-item active">
+                        <a href="/Blog/TrangBlog" class="tm-nav-link">
+                            <i class="far fa-comments"></i>
+                            Blog du lịch
+                        </a>
+                    </li>
+                    @if (Session["Taikhoan"] == null)
+                    {
+                        <li class="tm-nav-item">
+                            <a href="/Nguoidung/Dangnhap" class="tm-nav-link">
+                                <i class="fas fa-users"></i>
+                                Đăng nhập
+                            </a>
+                        </li>
+                        <li class="tm-nav-item">
+                            <a href="/Nguoidung/Dangky" class="tm-nav-link">
+                                <i class="fas fa-users"></i>
+                                Đăng ký
+                            </a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="tm-nav-item">
+                            <a href="/Nguoidung/Dangxuat" class="tm-nav-link">
+                                <i class="fas fa-users"></i>
+                                Đăng xuất
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <div class="container-fluid">
+
+        <main class="tm-main">
+            <div class="row tm-row">
+                <div class="col-12">
+                    @using (Html.BeginForm("TimkiemBlog", "Blog", FormMethod.Get, new { @class = "form-inline tm-mb-80 tm-search-form" }))
+                    {
+                        <input class="form-control tm-search-input" id="SearchString" name="SearchString" type="text" placeholder="Tìm kiếm..." aria-label="Search">
+                        <button class="tm-search-button" type="submit">
+                            <i class="fas fa-search tm-search-icon" aria-hidden="true"></i>
+                        </button>
+                    }
+                </div>
+            </div>
+            @RenderBody()
+        </main>
+
+    </div>
+    <script src="~/assetBlog/js/jquery.min.js"></script>
+    <script src="~/assetBlog/js/templatemo-script.js"></script>
+</body>
+</html>

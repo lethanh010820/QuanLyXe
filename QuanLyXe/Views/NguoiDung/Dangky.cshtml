@@ -1,0 +1,64 @@
+﻿@model QuanLyXe.Models.NGUOIDUNG
+@{
+    ViewBag.Title = "Dangky";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<div class="login">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="register-form">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true)
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Tên đăng nhập:</label>
+                                <input class="form-control" type="text" name="Tentaikhoan" placeholder="" maxlength="25" required />
+                                <p style="color:red;">@ViewData["Loi1"]</p>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Họ và Tên:</label>
+                                <input class="form-control" type="text" name="hoten" placeholder="" maxlength="50" required />
+                                <p style="color:red;">@ViewData["Loi4"]</p>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>Mật khẩu:</label>
+                                <input class="form-control" type="password" name="Matkhau" placeholder="" maxlength="15" required />
+                                <p style="color:red;">@ViewData["Loi2"]</p>
+                                @Html.ValidationMessageFor(m => m.matkhau)
+
+                            </div>
+                            <div class="col-md-6">
+                                <label>Nhập lại mật khẩu:</label>
+                                <input class="form-control" type="password" name="Matkhau2" placeholder="" maxlength="15" required/>
+                                <p style="color:red;">@ViewData["Loi3"]</p>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Số điện thoại:</label>
+                                <input class="form-control" type="text" name="sodienthoai" placeholder="" maxlength="11" required />
+                                <p style="color:red;">@ViewData["Loi5"]</p>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Email:</label>
+                                <input class="form-control" type="email" name="email" placeholder="" required />
+                                <p style="color:red;">@ViewData["Loi6"]</p>
+                            </div>
+
+
+
+                            <div class="col-md-12">
+                                <input style="width:120px;height:50px; border-radius:10px; background-color:#ff6666;color:white" type="submit" value="Đăng ký" />
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-6">
+
+            </div>
+        </div>
+    </div>
+</div>

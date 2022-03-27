@@ -1,0 +1,41 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<QuanLyXe.Models.LOAISANPHAM>
+@{
+    ViewBag.Title = "Quản lý loại xe";
+    Layout = "~/Views/Shared/_LayoutChothue.cshtml";
+}
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card strpied-tabled-with-hover">
+                    <div class="card-header ">
+                        <h4 class="card-title">Quản lý loại xe</h4>
+                        <p class="card-category">@Html.ActionLink("Thêm mới loại xe", "Themmoihang")</p>
+                    </div>
+                    <div class="card-body table-full-width table-responsive">
+                        <table class="table table-hover table-striped">
+                            <th>Mã hãng</th>
+                            <th>Tên hãng xe</th>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.maloaiSP</td>
+                                        <td>@item.tenloaiSP</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+<div class="Menutrang">
+    @Html.PagedListPager(Model, page => Url.Action("QLHangXe", new { page }))
+</div>
+

@@ -1,0 +1,9 @@
+﻿@model IEnumerable<QuanLyXe.Models.LOAISANPHAM>
+
+@foreach (var item in Model)
+{
+    <li class="nav-item">
+        <a class="nav-link" href="@Url.Action("SPTheoTheLoai","ThueXe", new { id = item.maloaiSP })"><i class="fa fa-plus-square"></i> @item.tenloaiSP</a>
+    </li>
+
+}

@@ -1,0 +1,64 @@
+﻿@model QuanLyXe.Models.NGUOIDUNG
+
+@{
+    ViewBag.Title = "Thông tin cá nhân";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<style>
+    label {
+        font-weight: bold;
+    }
+</style>
+<div class="login">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="register-form">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                    <div class="row">
+                        @Html.ValidationSummary(true)
+                        <div class="col-md-12">
+                            <label>Tên đăng nhập:</label>
+                        </div>
+                        <div class="col-md-12">
+                            <p style="margin-bottom: 7px;margin-left: 15px">@Model.tentaikhoan</p>
+                        </div>
+                        <div class="col-md-12">
+                            <label>Họ và Tên:</label>
+                            @Html.EditorFor(model => model.hoten, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.hoten)
+                        </div>
+                        <div class="col-md-12">
+                            <label>Mật khẩu:</label>
+                            @Html.EditorFor(model => model.matkhau, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.matkhau)
+                        </div>
+                        <div class="col-md-12">
+                            <label>Số điện thoại:</label>
+                            @Html.EditorFor(model => model.sodienthoai, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.sodienthoai)
+                        </div>
+                        <div class="col-md-12">
+                            <label>Email:</label>
+                            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.email)
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="submit" value="Sửa chi tiết xe" class="btn btn-success" />
+                                <a class="btn btn-success" href="~/Moto/index"><i class="fa fa-caret-left" style="font-size:15px;"></i> Quay lại</a>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                    </div>
+            </div>
+            <div class="col-lg-6">
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,127 @@
+﻿@model QuanLyXe.Models.SANPHAM
+@{
+    ViewBag.Title = "Sửa chi tiết xe";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+    #MaCD, #MaNXB {
+        width: 300px
+    }
+</style>
+<!-- End Navbar -->
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Sửa thông tin xe</h4>
+                    </div>
+                    <div class="card-body">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+                        <div class="row">
+                            @Html.ValidationSummary(true)
+                            <div class="col-md-12 pl-1">
+                                <div class="form-group">
+                                    <label>Mã xe:</label>
+                                    @Model.maSP
+                                </div>
+                            </div>
+                            <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label>Tên xe:</label>
+                                    @Html.EditorFor(model => model.tenSP, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.tenSP)
+                                </div>
+                            </div>
+                            <div class="col-md-6 pl-1">
+                                <div class="form-group">
+                                    <label>Giá cho thuê:</label>
+                                    @Html.EditorFor(model => model.giathue, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.giathue)
+                                </div>
+                            </div>
+                            <div class="col-md-12 pl-1">
+                                <div class="form-group">
+                                    <label>Mô tả:</label>
+                                    @Html.EditorFor(model => model.mota, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="col-md-12 pl-1">
+                                <div class="form-group">
+                                    <label>Ảnh:</label>
+                                    @Html.EditorFor(model => model.image, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Khung xe:</label>
+                                    @Html.EditorFor(model => model.khungxe, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.khungxe)
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Màu sấc:</label>
+                                    @Html.EditorFor(model => model.mausac, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.mausac)
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Phân khối:</label>
+                                    @Html.EditorFor(model => model.phankhoi, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.phankhoi)
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Hãng xe:</label>
+                                    @Html.EditorFor(model => model.hangxe, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.hangxe)
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Biển số:</label>
+                                    @Html.EditorFor(model => model.bienso, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.bienso)
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Địa chỉ:</label>
+                                    @Html.EditorFor(model => model.diachi, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.diachi)
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Loại sản phẩm:</label>
+                                    <label class="form-control">@Html.DropDownList("maloaiSP")</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 pl-1">
+                                <div class="form-group">
+                                    <label>Khu vực:</label>
+                                    <label class="form-control">@Html.DropDownList("makv")</label>
+                                </div>
+                            </div>
+                            <div class="col-md-12 pl-1">
+                                <div class="form-group">
+                                    <input type="submit" value="Sửa chi tiết xe" class="btn btn-info btn-fill pull-right" />
+                                    <a class="btn btn-success" href="~/Admin/QLXe"><i class="fa fa-caret-left" style="font-size:15px;"></i> Quay lại</a>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

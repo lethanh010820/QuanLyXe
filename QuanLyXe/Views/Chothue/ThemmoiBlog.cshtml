@@ -1,0 +1,83 @@
+﻿@model QuanLyXe.Models.BLOGDULICH
+@{
+    ViewBag.Title = "Thêm mới bài đăng";
+    Layout = "~/Views/Shared/_LayoutChothue.cshtml";
+}
+<!-- End Navbar -->
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Thêm mới bài đăng</h4>
+                    </div>
+                    <div class="card-body">
+                        @using (Html.BeginForm("ThemmoiBlog", "Chothue", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+                        {
+
+                            @Html.AntiForgeryToken()
+                            <div class="row">
+                                @Html.ValidationSummary(true)
+                                <div class="col-md-6 pl-1">
+                                    <div class="form-group">
+                                        <label>Tiêu đề:</label>
+                                        <input class="form-control" type="text" name="tieude" placeholder="" required />
+                                        @Html.ValidationMessageFor(model => model.tieude)
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pl-1">
+                                    <div class="form-group">
+                                        <label>Mô tả ngắn:</label>
+                                        <input class="form-control" type="text" name="mota" placeholder="" required />
+                                        @Html.ValidationMessageFor(model => model.mota)
+                                    </div>
+                                </div>
+                                <div class="col-md-12 pl-1">
+                                    <div class="form-group">
+                                        @Html.Label("Nội dung bài viết:", htmlAttributes: new { @class = "control-label col-md-4" })
+                                        <div class="col-md-12">
+                                            @Html.TextAreaFor(model => model.noidung, new { @class = "form-control", cols = 3 })
+                                            @Html.ValidationMessageFor(model => model.noidung, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <script>
+                                        var editor = CKEDITOR.replace('noidung',
+                                            {
+                                                filebrowserImageBrowseUrl: "~/Content/ckfinder/ckfinder.html?type=Images",
+                                                width: '100%',
+                                                height: '450'
+                                            }
+                                        );
+                                    </script>
+                                </div>
+                                <div class="col-md-12 pl-1">
+                                    <div class="form-group">
+                                        <label>Ảnh bìa:</label>
+                                        <div class="form-control">
+                                            <input type="file" name="fileupload" value="" />
+                                        </div>
+                                        <p style="color:red; margin-left:10px; margin-top:5px;">@ViewBag.Thongbao</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 pl-1">
+                                    <div class="form-group">
+                                        <label>Ngày đăng:</label>
+                                        <label class="form-control">@DateTime.Now.ToShortDateString()</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 pl-1">
+                                    <div class="form-group">
+                                        <input type="submit" value="Thêm mới" class="btn btn-info btn-fill pull-right" />
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

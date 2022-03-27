@@ -1,0 +1,35 @@
+﻿@model IEnumerable<QuanLyXe.Models.SANPHAM>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser1.cshtml";
+}
+@foreach (var moto in Model)
+{
+    <div class="col-md-4">
+        <div class="product-item">
+            <div class="product-title">
+                <a href="">@moto.tenSP</a>
+                <div class="ratting">
+                    <i>@moto.KHUVUC.tenkv</i>
+                </div>
+                <div class="ratting">
+                    <i><b>Người cho thuê: </b>@moto.NGUOIDUNG.hoten</i>
+                </div>
+            </div>
+            <div class="product-image">
+                <a href="product-detail.html">
+                    <img alt="@moto.tenSP" src="~/img/@moto.image" />
+                </a>
+                <div class="product-action">
+                    <a href="@Url.Action("Themgiohang1","Giohang", new { @imaSP = moto.maSP, @strURL=Request.Url.ToString()})"><i class="fa fa-cart-plus"></i></a>
+                    <a href="@Url.Action("ChiTiet", "ThueXe", new { id = moto.maSP })"><i class="fa fa-search"></i></a>
+                </div>
+            </div>
+            <div class="product-price">
+                <h3>@String.Format("{0:0,0}", moto.giathue)<span>₫</span></h3>
+                <a class="btn" href="@Url.Action("Themgiohang","Giohang", new { @imaSP = moto.maSP, @strURL=Request.Url.ToString()})"><i class="fa fa-shopping-cart"></i>Thuê</a>
+            </div>
+        </div>
+    </div>
+}
+

@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutBlog.cshtml";
+}
+
+<div class="row tm-row">
+    <div class="col-lg-8 tm-post-col">
+        <div class="tm-post-full">
+            <div class="mb-4">
+                <h2 class="pt-2 tm-color-primary tm-post-title">Cửa hàng – LMTStore</h2>
+                <p><i class="fa fa-home"></i><a style="color:red;" href="~/Moto/index">Trang chủ</a> » Cửa hàng – LMTStore</p>
+                <h3>Liên hệ</h3>
+                <ul style="margin-left: 48px;">
+                    <li>Email: <a href="lethanh010820@gmail.com">lethanh010820@gmail.com</a></li>
+                    <li>Hotline: <a href="tel:0866571001">0866571001</a></li>
+                    <li>Fanpage LMTStore: <a href="https://www.facebook.com/thanh.levan.379/">fb.com/thanh.levan.379</a></li>
+                </ul>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <aside class="col-lg-4 tm-aside-col">
+        <div class="tm-post-sidebar">
+
+            <hr class="mb-3 tm-hr-primary">
+            <h2 class="tm-mb-40 tm-post-title tm-color-primary">Bài đăng khác</h2>
+            @Html.Action("Top3blogmoi", "Blog")
+        </div>
+    </aside>
+</div>

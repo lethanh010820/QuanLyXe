@@ -1,0 +1,37 @@
+﻿
+@model QuanLyXe.Models.BLOGDULICH
+@{
+    Layout = "~/Views/Shared/_LayoutBlog.cshtml";
+}
+
+    <div class="row tm-row">
+        <div class="col-lg-8 tm-post-col">
+            <div class="tm-post-full">
+                <div class="mb-4">
+                    <h2 class="pt-2 tm-color-primary tm-post-title">@Model.tieude</h2>
+                    <p class="tm-mb-40">@Model.ngaydang</p>
+                    <div class="tm-post-link-inner">
+                        <img src="@Url.Content("~/img/"+ Model.hinhanh)" alt="Image" class="img-fluid">
+                    </div>
+                    <br>
+                    <p style=" text-align: justify;">
+                        &emsp;
+                        &emsp;
+                        @Html.Raw(Model.noidung)
+                    </p>
+                    <hr>
+                    <span class="d-block text-right tm-color-primary">by @Model.NGUOIDUNG.hoten</span>
+                </div>
+
+
+            </div>
+        </div>
+        <aside class="col-lg-4 tm-aside-col">
+            <div class="tm-post-sidebar">
+
+                <hr class="mb-3 tm-hr-primary">
+                <h2 class="tm-mb-40 tm-post-title tm-color-primary">Bài đăng khác</h2>
+                @Html.Action("Top3blogmoi", "Blog")
+            </div>
+        </aside>
+    </div>

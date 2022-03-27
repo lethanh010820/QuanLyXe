@@ -1,0 +1,67 @@
+﻿@model QuanLyXe.Models.HOADON
+
+@{
+    ViewBag.Title = "Sửa hóa đơn";
+    Layout = "~/Views/Shared/_LayoutChothue.cshtml";
+}
+
+<style>
+    #tinhtrangthue {
+        width: 300px
+    }
+</style>
+<!-- End Navbar -->
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Sửa tình trạng hóa đơn</h4>
+                    </div>
+                    <div class="card-body">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="row">
+                                @Html.ValidationSummary(true)
+                                <div class="col-md-12 pl-1">
+                                    <div class="form-group">
+                                        <label>Mã hóa đơn:</label>
+                                        @Model.maHD
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pl-1">
+                                    <div class="form-group">
+                                        <label>Ngày thuê xe:</label>
+                                        @Model.ngaythue
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pl-1">
+                                    <div class="form-group">
+                                        <label>Giá cho thuê:</label>
+                                        @Model.ngaytra
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pl-1">
+                                    <div class="form-group">
+                                        <label>Tình trạng thuê</label>
+                                        <label class="form-control">@Html.DropDownList("tinhtrangthue")</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 pl-1">
+                                    <div class="form-group">
+                                        <input type="submit" value="Sửa chi tiết xe" class="btn btn-info btn-fill pull-right" />
+                                        <a class="btn btn-success" href="~/Chothue/Hoadon"><i class="fa fa-caret-left" style="font-size:15px;"></i> Quay lại</a>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

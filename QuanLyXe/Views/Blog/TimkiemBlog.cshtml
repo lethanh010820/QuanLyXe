@@ -1,0 +1,70 @@
+﻿@model IEnumerable<QuanLyXe.Models.BLOGDULICH>
+@{
+    Layout = "~/Views/Shared/_LayoutBlog.cshtml";
+}
+<style>
+    .img-fluid {
+        width: 440px;
+        height: 220px;
+    }
+
+    .pagination-container {
+        justify-content: center !important;
+        display: inline-block;
+    }
+
+    .pagination {
+        justify-content: center !important;
+    }
+
+        .pagination a {
+            justify-content: center !important;
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+            .pagination a.active {
+                background-color: #FF6F61;
+                color: white;
+                border-radius: 5px;
+            }
+
+            .pagination a:hover:not(.active) {
+                background-color: #FF6F61;
+                border-radius: 5px;
+            }
+
+    a:not([href]):not([class]) {
+        color: white;
+        text-decoration: none;
+        background: #FF6F61;
+        border-radius: 5px;
+    }
+</style>
+
+<div class="row tm-row">
+    @foreach (var item in Model)
+    {
+        <article class="col-12 col-md-6 tm-post">
+            <hr class="tm-hr-primary">
+            <a href="/Blog/TrangChitietBlog/@item.maTD" class="effect-lily tm-post-link tm-pt-60">
+                <div class="tm-post-link-inner">
+                    <img src="@Url.Content("~/img/"+ item.hinhanh)" alt="Image" class="img-fluid">
+                </div>
+                <span class="position-absolute tm-new-badge">New</span>
+                <h2 class="tm-pt-30 tm-color-primary tm-post-title" style="text-transform: uppercase;"><b>@item.tieude</b></h2>
+            </a>
+            <p class="tm-pt-30">
+                @item.mota
+            </p>
+            <div class="d-flex justify-content-between tm-pt-45">
+                <span class="tm-color-primary">@item.ngaydang</span>
+                <span>by <i>@item.NGUOIDUNG.hoten</i></span>
+
+            </div>
+            <hr>
+        </article>
+    }
+</div>
